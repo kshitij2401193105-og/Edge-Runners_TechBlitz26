@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap');
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 215 25% 14%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 14%;
+    --primary: 211 86% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 16% 93%;
+    --secondary-foreground: 215 25% 20%;
+    --muted: 210 16% 93%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 173 58% 39%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 211 86% 40%;
+    --radius: 0.6rem;
+
+    --sidebar: 215 28% 17%;
+    --sidebar-foreground: 210 20% 92%;
+    --sidebar-muted: 215 20% 28%;
+    --sidebar-accent: 211 86% 50%;
+  }
+
+  * { @apply border-border; }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: 'DM Serif Display', serif;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer components {
+  .sidebar {
+    background-color: hsl(var(--sidebar));
+    color: hsl(var(--sidebar-foreground));
+  }
+
+  .sidebar-item {
+    @apply flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-150;
+    color: hsl(var(--sidebar-foreground) / 0.7);
+  }
+
+  .sidebar-item:hover {
+    background-color: hsl(var(--sidebar-muted));
+    color: hsl(var(--sidebar-foreground));
+  }
+
+  .sidebar-item.active {
+    background-color: hsl(var(--sidebar-accent) / 0.15);
+    color: hsl(var(--sidebar-accent));
+    border-left: 2px solid hsl(var(--sidebar-accent));
+  }
+
+  .stat-card {
+    @apply bg-card rounded-xl border p-5 animate-fade-in;
+  }
+
+  .slot-free {
+    @apply bg-emerald-50 border border-emerald-200 text-emerald-700 rounded-lg px-3 py-1.5 text-xs font-medium cursor-pointer hover:bg-emerald-100 transition-colors;
+  }
+
+  .slot-booked {
+    @apply bg-blue-50 border border-blue-200 text-blue-700 rounded-lg px-3 py-1.5 text-xs font-medium cursor-default;
+  }
+
+  .slot-freed {
+    @apply bg-amber-50 border border-amber-300 text-amber-700 rounded-lg px-3 py-1.5 text-xs font-medium cursor-pointer animate-pulse hover:bg-amber-100 transition-colors;
+  }
+}
