@@ -1,0 +1,8 @@
+{
+  "/login/page": "app/login/page.js",
+  "/receptionist/page": "app/receptionist/page.js",
+  "/receptionist/analytics/page": "app/receptionist/analytics/page.js",
+  "/receptionist/calendar/page": "app/receptionist/calendar/page.js",
+  "/receptionist/patients/page": "app/receptionist/patients/page.js",
+  "/receptionist/appointments/page": "app/receptionist/appointments/page.js"
+}
